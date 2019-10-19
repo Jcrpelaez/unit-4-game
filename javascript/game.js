@@ -11,7 +11,6 @@ var green = Math.floor(Math.random() * 12) + 1;
 var purple = Math.floor(Math.random() * 12) + 1;
 
 // Function to begin the game
-
 var startGame = function() {
   var currentScore = 0;
 
@@ -25,13 +24,13 @@ var startGame = function() {
   console.log(green);
   purple.value = Math.floor(Math.random() * 12) + 1;
   console.log(purple);
-    $("targetScore").html(targetScore);
-    $("yourScore").html(currentScore);
+    $("#targetScore").html(targetScore);
+    $("#yourScore").html(currentScore);
+
 };
 
-
-
 startGame();
+
 
 //jQuery Functions
 $("#blue").click(function() {
