@@ -16,32 +16,46 @@ var startGame = function() {
 
   targetScore = Math.floor(Math.random() * 120) + 19;
   console.log(targetScore);
-  blue.value = Math.floor(Math.random() * 12) + 1;
+  blue = Math.floor(Math.random() * 12) + 1;
   console.log(blue);
-  yellow.value = Math.floor(Math.random() * 12) + 1;
+  yellow = Math.floor(Math.random() * 12) + 1;
   console.log(yellow);
-  green.value = Math.floor(Math.random() * 12) + 1;
+  green = Math.floor(Math.random() * 12) + 1;
   console.log(green);
-  purple.value = Math.floor(Math.random() * 12) + 1;
+  purple = Math.floor(Math.random() * 12) + 1;
   console.log(purple);
-    $("#targetScore").html(targetScore);
-    $("#yourScore").html(currentScore);
+  $("#targetScore").html(targetScore);
+  $("#yourScore").html(currentScore);
 
+  //jQuery Functions
+  $("#blue").click(function() {
+    currentScore = currentScore + blue;
+    console.log("" + currentScore);
+    $("#yourScore").html("" + currentScore);
+  });
+  $("#yellow").click(function() {
+    currentScore = currentScore + yellow;
+    console.log("" + currentScore);
+    $("#yourScore").html("" + currentScore);
+  });
+  $("#green").click(function() {
+    currentScore = currentScore + green;
+    console.log("" + currentScore);
+    $("#yourScore").html("" + currentScore);
+  });
+  $("#purple").click(function() {
+    currentScore = currentScore + purple;
+    console.log("" + currentScore);
+    $("#yourScore").html("" + currentScore);
+  });
+  if (currentScore == targetScore) {
+    wins++;
+    alert("You win!");
+  }
+  if (currentScore > targetScore) {
+    lose++;
+    alert("You lose!");
+  }
 };
 
 startGame();
-
-
-//jQuery Functions
-$("#blue").click(function() {
-  alert("test");
-});
-$("#yellow").click(function() {
-  alert("test");
-});
-$("#green").click(function() {
-  alert("test");
-});
-$("#purple").click(function() {
-  alert("test");
-});
