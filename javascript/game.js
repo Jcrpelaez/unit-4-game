@@ -37,6 +37,8 @@ var startGame = function() {
       alert("You lost");
       losses++;
       $("losses").html("" + losses);
+    } else if (currentScore == targetScore) {
+      alert("You Win!");
     }
   });
   $("#yellow").click(function() {
@@ -47,6 +49,8 @@ var startGame = function() {
       alert("You lost");
       losses++;
       $("losses").html("" + losses);
+    } else if (currentScore == targetScore) {
+      alert("You Win!");
     }
   });
   $("#green").click(function() {
@@ -57,6 +61,8 @@ var startGame = function() {
       alert("You lost");
       losses++;
       $("losses").html("" + losses);
+    } else if (currentScore == targetScore) {
+      alert("You Win!");
     }
   });
   $("#purple").click(function() {
