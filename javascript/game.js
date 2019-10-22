@@ -24,6 +24,7 @@ var startGame = function() {
   console.log(green);
   purple = Math.floor(Math.random() * 12) + 1;
   console.log(purple);
+
   $("#targetScore").html(targetScore);
   $("#yourScore").html(currentScore);
 
@@ -32,30 +33,44 @@ var startGame = function() {
     currentScore = currentScore + blue;
     console.log("" + currentScore);
     $("#yourScore").html("" + currentScore);
+    if (currentScore > targetScore) {
+      alert("You lost");
+      losses++;
+      $("losses").html("" + losses);
+    }
   });
   $("#yellow").click(function() {
     currentScore = currentScore + yellow;
     console.log("" + currentScore);
     $("#yourScore").html("" + currentScore);
+    if (currentScore > targetScore) {
+      alert("You lost");
+      losses++;
+      $("losses").html("" + losses);
+    }
   });
   $("#green").click(function() {
     currentScore = currentScore + green;
     console.log("" + currentScore);
     $("#yourScore").html("" + currentScore);
+    if (currentScore > targetScore) {
+      alert("You lost");
+      losses++;
+      $("losses").html("" + losses);
+    }
   });
   $("#purple").click(function() {
     currentScore = currentScore + purple;
     console.log("" + currentScore);
     $("#yourScore").html("" + currentScore);
+    if (currentScore > targetScore) {
+      alert("You lost");
+      losses++;
+      $("losses").html("" + losses);
+    } else if (currentScore == targetScore) {
+      alert("You Win!");
+    }
   });
-  if (currentScore == targetScore) {
-    wins++;
-    alert("You win!");
-  }
-  if (currentScore > targetScore) {
-    lose++;
-    alert("You lose!");
-  }
 };
 
 startGame();
