@@ -13,7 +13,7 @@ var purple = Math.floor(Math.random() * 12) + 1;
 // Function to begin the game
 var startGame = function() {
   var currentScore = 0;
-
+// created variables to give each crystal and target score a random number each game 
   targetScore = Math.floor(Math.random() * 120) + 19;
   console.log(targetScore);
   blue = Math.floor(Math.random() * 12) + 1;
@@ -28,7 +28,7 @@ var startGame = function() {
   $("#targetScore").html(targetScore);
   $("#yourScore").html(currentScore);
 
-  //jQuery Functions
+  // jQuery Functions // couldnt get the wins and losses to show up
   $("#blue").click(function() {
     currentScore = currentScore + blue;
     console.log("" + currentScore);
@@ -39,6 +39,8 @@ var startGame = function() {
       $("losses").html("" + losses);
     } else if (currentScore == targetScore) {
       alert("You Win!");
+      wins++
+      $("wins").html(""+ wins);
     }
   });
   $("#yellow").click(function() {
@@ -51,6 +53,8 @@ var startGame = function() {
       $("losses").html("" + losses);
     } else if (currentScore == targetScore) {
       alert("You Win!");
+      wins++;
+      $("wins").html("" + wins);
     }
   });
   $("#green").click(function() {
@@ -63,6 +67,8 @@ var startGame = function() {
       $("losses").html("" + losses);
     } else if (currentScore == targetScore) {
       alert("You Win!");
+      wins++
+      $("wins").html("" + wins);
     }
   });
   $("#purple").click(function() {
@@ -75,6 +81,8 @@ var startGame = function() {
       $("losses").html("" + losses);
     } else if (currentScore == targetScore) {
       alert("You Win!");
+      wins++;
+      $("wins").html("" + wins);
     }
   });
 };
